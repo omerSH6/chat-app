@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>chat app</title>
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1 id="room-name"></h1>
+      <button id="FirebaseSave" class="btn btn-warning"> save to Firebase</button>
+      <button onclick="window.location.href = '/'" class="btn"><i class="fa fa-home"></i></button>
+    </header>
+    <main class="chat-main">
+      <div class="chat-sidebar">
+        <div id="sidbar-data">
+        <h3><i class="users"></i> online users</h3>
+        <ul id="users">
+          
+          
+        </ul>
+        <hr>
+        <h3><i class="users"></i> typing users</h3>
+        <ul id="typing_users">
+        </ul>
+      </div>
+      </div>
+      <div class="chat-messages" id="chat-messages"></div>
+    </main>
+    <div class="chat-form-container">
+      <button id="smile" onclick="appendicon('smile')" class="btn btn-warning btn-sm" ><i class="fa fa-smile-o" aria-hidden="false"></i></button>
+      <button id="thumbs-up" onclick="appendicon('thumbs-up')" class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i></button>
+      <form id="chat-form">
+        
+        <input
+          id="msg"
+          type="text"
+          placeholder="Enter Message"
+          required
+          autocomplete="off"
+        />
+        <button id="send-btn" class="btn btn-primary btn-sm"> Send</button>
+      </form>
+      
+
+    </div>
+  </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyDy9P3feui17hpCu7NUPw9x8x7vXIJmit8",
+    authDomain: "chat-app-362b2.firebaseapp.com",
+    projectId: "chat-app-362b2",
+    storageBucket: "chat-app-362b2.appspot.com",
+    messagingSenderId: "318492078923",
+    appId: "1:318492078923:web:335df1472cc7c02db26ece"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/firebase.js"></script>
+</body>
+</html>
