@@ -7,7 +7,7 @@ by pressing this button, all the chat will be save to firebase database,
 and on home screen you can enter your username and watch the saved messages.
 
 steps for using the chat:
-1.dounload the file
+1.download the file
 2.cd into the folder
 3.go to public/room.html and edit "firebaseConfig" with your information from firebase.
 4.run npm install
